@@ -61,7 +61,8 @@ private slots:
 private:   
     //Disconnect all connect at last
     void disConnectAll();
-    
+
+private:    
     //Send data socket
     QUdpSocket m_udpSendSocket;
     
