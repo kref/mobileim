@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SampleUi01</class>
+ <widget class="QWidget" name="SampleUi01">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>366</width>
+    <height>131</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Sample_Ui_01</string>
+  </property>
+  <layout class="QFormLayout" name="formLayout">
+   <item row="0" column="0">
+    <layout class="QVBoxLayout" name="verticalLayout_4">
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <item>
+          <widget class="QLabel" name="pLblFirst">
+           <property name="text">
+            <string>&amp;FirstLabel</string>
+           </property>
+           <property name="buddy">
+            <cstring>pEdtFirst</cstring>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="pLblSecond">
+           <property name="text">
+            <string>&amp;SecondLabel</string>
+           </property>
+           <property name="buddy">
+            <cstring>lineEdit_2</cstring>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="pLblThird">
+           <property name="text">
+            <string>&amp;ThirdLabel</string>
+           </property>
+           <property name="buddy">
+            <cstring>lineEdit_3</cstring>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <widget class="QLineEdit" name="pEdtFirst"/>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout">
+           <item>
+            <widget class="QLineEdit" name="lineEdit_2"/>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="lineEdit_3"/>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>98</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pPbtnMax">
+         <property name="text">
+          <string>&amp;Maximize</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pPbtnNorm">
+         <property name="text">
+          <string>&amp;Normal</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pPbtnClose">
+         <property name="text">
+          <string>&amp;Close</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>pPbtnClose</sender>
+   <signal>clicked()</signal>
+   <receiver>SampleUi01</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>317</x>
+     <y>110</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>319</x>
+     <y>129</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pPbtnMax</sender>
+   <signal>clicked()</signal>
+   <receiver>SampleUi01</receiver>
+   <slot>showMaximized()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>165</x>
+     <y>114</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>256</x>
+     <y>129</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pPbtnNorm</sender>
+   <signal>clicked()</signal>
+   <receiver>SampleUi01</receiver>
+   <slot>showNormal()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>233</x>
+     <y>104</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>182</x>
+     <y>65</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
