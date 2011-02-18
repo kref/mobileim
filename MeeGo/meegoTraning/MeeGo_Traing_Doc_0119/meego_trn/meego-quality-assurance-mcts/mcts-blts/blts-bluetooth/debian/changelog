@@ -1,0 +1,54 @@
+blts-bluetooth-tests (0.2.10) unstable; urgency=low
+
+  * Remove obsolete Min support code
+
+ -- Kimmo Myllyvirta <kimmo.myllyvirta@digia.com>  Thu, 16 Dec 2010 10:54:36 +0200
+
+blts-bluetooth-tests (0.2.9) unstable; urgency=low
+
+  [ Mika Niinistö, Aki Nyman, Kimmo Myllyvirta ]
+  * Use correct logging macros and funcs
+  * Packaging script updates
+  * Some bug fixes according to review comments (wake up other DUT code
+    modified, xml fixed, memset 0 for info compare case)
+  * HCI controller info test case fixed, sends/receives END -mark when
+    verification is done
+  * Connected link info sending (non-thread version) and AFH map verification
+    modified, and some timeouts fixed
+  * Some testcase timeouts changed
+  * Handle short timestamps from hcidump
+
+ -- Aki Nyman <aki.nyman@digia.com>  Tue, 16 Nov 2010 16:55:43 +0200
+
+blts-bluetooth-tests (0.2.8) unstable; urgency=low
+
+  [ Aki Nyman ]
+  * Test cases modified to use common library functions
+  * Add configuration file support
+
+ -- Aki Nyman <aki.nyman@digia.com>  Wed, 6 Oct 2010 15:00:44 +0300
+
+blts-bluetooth-tests (0.2.7) unstable; urgency=low
+
+  [ Mika Niinistö ]
+  * Add RPM packaging
+  * Binary name changed to "blts-bluetooth-tests"
+
+ -- Kimmo Myllyvirta <kimmo.myllyvirta@digia.com>  Thu, 30 Sep 2010 13:56:44 +0300
+
+blts-bluetooth-tests (0.2.6) unstable; urgency=low
+
+  [ Jussi Saavalainen & Aki Nyman ]
+  * Initial upload for Meego (changelog summarized)
+  * Pairing test.
+  * Connection information exchange test.
+  * HCI Change/Verify Name and HCI Change/Verify Class tests.
+  * HCI Reset Connection test.
+  * Incoming connection sequence audit.
+  * HCI Transfer/Receive ACL data packet tests.
+  * Driver and Bluez userspace check.
+  * RFComm connect and ping-pong tests.
+  * HCI link-only connect test.
+  * L2CAP connect and ping-pong tests.
+
+ -- Kari Laakso <kari.laakso@digia.com>  Tue, 31 Aug 2010 16:05:52 +0300

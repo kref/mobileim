@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- tests.xml - Test case descriptions for automation tools.
+
+   Copyright (C) 2000-2010, Nokia Corporation.
+
+   This program is free software: you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation, version 2.
+
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+
+   You should have received a copy of the GNU General Public License
+   along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<testdefinition version="1.0">
+  <suite name="blts-ofono-tests" domain="Communications">
+  <description>oFono Tests</description>
+    <set name="ofono-tests" feature="Cellular Framework">
+      <description>Cellular</description>
+      <case name="oFono - Information Query"
+        type="Functional">
+        <step>/usr/bin/blts-ofono-tests -l /var/log/tests/oFono_-_Information_Query.log -en "oFono - Information Query"</step>
+      </case>
+      <case name="oFono - Create voicecall"
+        type="Functional">
+        <step>/usr/bin/blts-ofono-tests -l /var/log/tests/oFono_-_Create_voicecall.log -en "oFono - Create voicecall"</step>
+      </case>
+      <case name="oFono - Create voicecall with hidden caller ID"
+        type="Functional">
+        <step>/usr/bin/blts-ofono-tests -l /var/log/tests/oFono_-_Create_voicecall_with_hidden_caller_ID.log -en "oFono - Create voicecall with hidden caller ID"</step>
+      </case>
+      <case name="oFono - Call and send DTMF"
+        type="Functional">
+        <step>/usr/bin/blts-ofono-tests -l /var/log/tests/oFono_-_Call_and_send_DTMF.log -en "oFono - Call and send DTMF"</step>
+      </case>
+      <case name="oFono - Answer to voicecall and hangup"
+        type="Functional">
+        <step>/usr/bin/blts-ofono-tests -l /var/log/tests/oFono_-_Answer_to_voicecall_and_hangup.log -en "oFono - Answer to voicecall and hangup"</step>
+      </case>
+      <case name="oFono - Answer to voicecall and hangup all"
+        type="Functional">
+        <step>/usr/bin/blts-ofono-tests -l /var/log/tests/oFono_-_Answer_to_voicecall_and_hangup_all.log -en "oFono - Answer to voicecall and hangup all"</step>
+      </case>
+      <case name="oFono - Answer to voicecall and wait another call"
+        type="Functional">
+        <step>/usr/bin/blts-ofono-tests -l /var/log/tests/oFono_-_Answer_to_voicecall_and_wait_another_call.log -en "oFono - Answer to voicecall and wait another call"</step>
+      </case>
+      <case name="oFono - Answer to voicecall and deflect"
+        type="Functional">
+        <step>/usr/bin/blts-ofono-tests -l /var/log/tests/oFono_-_Answer_to_voicecall_and_deflect.log -en "oFono - Answer to voicecall and deflect"</step>
+      </case>
+      <case name="oFono - Answer to voicecall and remote hangup"
+        type="Functional">
+        <step>/usr/bin/blts-ofono-tests -l /var/log/tests/oFono_-_Answer_to_voicecall_and_remote_hangup.log -en "oFono - Answer to voicecall and remote hangup"</step>
+      </case>
+      <case name="oFono - Cancel voicecall"
+        type="Functional">
+        <step>/usr/bin/blts-ofono-tests -l /var/log/tests/oFono_-_Cancel_voicecall.log -en "oFono - Cancel voicecall"</step>
+      </case>
+      <case name="oFono - Transfer"
+        type="Functional">
+        <step>/usr/bin/blts-ofono-tests -l /var/log/tests/oFono_-_Transfer.log -en "oFono - Transfer"</step>
+      </case>
+      <case name="oFono - Swap"
+        type="Functional">
+        <step>/usr/bin/blts-ofono-tests -l /var/log/tests/oFono_-_Swap.log -en "oFono - Swap"</step>
+      </case>
+      <case name="oFono - Release and answer"
+        type="Functional">
+        <step>/usr/bin/blts-ofono-tests -l /var/log/tests/oFono_-_Release_and_answer.log -en "oFono - Release and answer"</step>
+      </case>
+      <case name="oFono - Hold and answer"
+        type="Functional">
+        <step>/usr/bin/blts-ofono-tests -l /var/log/tests/oFono_-_Hold_and_answer.log -en "oFono - Hold and answer"</step>
+      </case>
+      <case name="oFono - Disable forwardings"
+        type="Functional">
+        <step>/usr/bin/blts-ofono-tests -l /var/log/tests/oFono_-_Disable_forwardings.log -en "oFono - Disable forwardings"</step>
+      </case>
+      <case name="oFono - Unconditional forwarding"
+        type="Functional">
+        <step>/usr/bin/blts-ofono-tests -l /var/log/tests/oFono_-_Unconditional_forwarding.log -en "oFono - Unconditional forwarding"</step>
+      </case>
+      <case name="oFono - Forward if busy"
+        type="Functional">
+        <step>/usr/bin/blts-ofono-tests -l /var/log/tests/oFono_-_Forward_if_busy.log -en "oFono - Forward if busy"</step>
+      </case>
+      <case name="oFono - Forward if no reply"
+        type="Functional">
+        <step>/usr/bin/blts-ofono-tests -l /var/log/tests/oFono_-_Forward_if_no_reply.log -en "oFono - Forward if no reply"</step>
+      </case>
+      <case name="oFono - Forward if not reachable"
+        type="Functional">
+        <step>/usr/bin/blts-ofono-tests -l /var/log/tests/oFono_-_Forward_if_not_reachable.log -en "oFono - Forward if not reachable"</step>
+      </case>
+
+
+      <case name="oFono - Send SMS"
+        type="Functional">
+        <step>/usr/bin/blts-ofono-tests -l /var/log/tests/oFono_-_Send_SMS.log -en "oFono - Send SMS"</step>
+      </case>
+      <case name="oFono - Receive SMS"
+        type="Functional">
+        <step>/usr/bin/blts-ofono-tests -l /var/log/tests/oFono_-_Receive_SMS.log -en "oFono - Receive SMS"</step>
+      </case>
+
+
+      <case name="oFono - Set microphone volume"
+        type="Functional">
+        <step>/usr/bin/blts-ofono-tests -l /var/log/tests/oFono_-_Set_microphone_volume.log -en "oFono - Set microphone volume"</step>
+      </case>
+      <case name="oFono - Set speaker volume"
+        type="Functional">
+        <step>/usr/bin/blts-ofono-tests -l /var/log/tests/oFono_-_Set_speaker_volume.log -en "oFono - Set speaker volume"</step>
+      </case>
+      <case name="oFono - Set muted"
+        type="Functional">
+        <step>/usr/bin/blts-ofono-tests -l /var/log/tests/oFono_-_Set_muted.log -en "oFono - Set muted"</step>
+      </case>
+
+      <case name="oFono - Call meters read"
+        type="Functional">
+        <step>/usr/bin/blts-ofono-tests -l /var/log/tests/oFono_-_Call_meters_read.log -en "oFono - Call meters read"</step>
+      </case>
+      <case name="oFono - Call meters set"
+        type="Functional">
+        <step>/usr/bin/blts-ofono-tests -l /var/log/tests/oFono_-_Call_meters_set.log -en "oFono - Call meters set"</step>
+      </case>
+      <case name="oFono - Call meters reset"
+        type="Functional">
+        <step>/usr/bin/blts-ofono-tests -l /var/log/tests/oFono_-_Call_meters_reset.log -en "oFono - Call meters reset"</step>
+      </case>
+      <case name="oFono - Call meters near max warning"
+        type="Functional">
+        <step>/usr/bin/blts-ofono-tests -l /var/log/tests/oFono_-_Call_meters_near_max_warning.log -en "oFono - Call meters near max warning"</step>
+      </case>
+
+      <case name="oFono - Check barring properties"
+        type="Functional">
+        <step>/usr/bin/blts-ofono-tests -l /var/log/tests/oFono_-_Check_barring_properties.log -en "oFono - Check barring properties" </step>
+      </case>
+      <case name="oFono - Disable barrings"
+        type="Functional">
+        <step>/usr/bin/blts-ofono-tests -l /var/log/tests/oFono_-_Disable_barrings.log -en "oFono - Disable barrings" </step>
+      </case>
+      <case name="oFono - Change password for barrings"
+        type="Functional">
+        <step>/usr/bin/blts-ofono-tests -l /var/log/tests/oFono_-_Change_password_for_barrings.log -en "oFono - Change password for barrings" </step>
+      </case>
+      <case name="oFono - Call barrings test"
+        type="Functional">
+        <step>/usr/bin/blts-ofono-tests -l /var/log/tests/oFono_-_Call_barrings_test.log -en "oFono - Call barrings test" </step>
+      </case>
+      <case name="oFono - Disable incoming barrings"
+        type="Functional">
+        <step>/usr/bin/blts-ofono-tests -l /var/log/tests/oFono_-_Disable_incoming_barrings.log -en "oFono - Disable incoming barrings" </step>
+      </case>
+      <case name="oFono - Disable outgoing barrings"
+        type="Functional">
+        <step>/usr/bin/blts-ofono-tests -l /var/log/tests/oFono_-_Disable_outgoing_barrings.log -en "oFono - Disable outgoing barrings" </step>
+      </case>
+      <case name="oFono - Propose scan"
+        type="Functional">
+        <step>/usr/bin/blts-ofono-tests -l /var/log/tests/oFono_-_Propose_scan.log -en "oFono - Propose scan" </step>
+      </case>
+      <case name="oFono - SMSC number test"
+        type="Functional">
+        <step>/usr/bin/blts-ofono-tests -l /var/log/tests/oFono_-_SMSC_number_test.log -en "oFono - SMSC number test" </step>
+      </case>
+      <case name="oFono - Multiparty call test"
+        type="Functional">
+        <step>/usr/bin/blts-ofono-tests -l /var/log/tests/oFono_-_Multiparty_call_test.log -en "oFono - Multiparty call test" </step>
+      </case>
+      <case name="oFono - Private call test"
+        type="Functional">
+        <step>/usr/bin/blts-ofono-tests -l /var/log/tests/oFono_-_Private_call_test.log -en "oFono - Private call test" </step>
+      </case>
+	  <case name="oFono - List all properties"
+        type="Functional">
+		<step>/usr/bin/blts-ofono-tests -l /var/log/tests/oFono_-_List_all_properties.log -en "oFono - List all properties"</step>
+	  </case>
+
+      <get>
+        <file>/var/log/tests/oFono_-_Information_Query.log</file>
+        <file>/var/log/tests/oFono_-_Create_voicecall.log</file>
+        <file>/var/log/tests/oFono_-_Create_voicecall_with_hidden_caller_ID.log</file>
+        <file>/var/log/tests/oFono_-_Call_and_send_DTMF.log</file>
+        <file>/var/log/tests/oFono_-_Answer_to_voicecall_and_hangup.log</file>
+        <file>/var/log/tests/oFono_-_Answer_to_voicecall_and_hangup_all.log</file>
+        <file>/var/log/tests/oFono_-_Answer_to_voicecall_and_wait_another_call.log</file>
+        <file>/var/log/tests/oFono_-_Answer_to_voicecall_and_deflect.log</file>
+        <file>/var/log/tests/oFono_-_Answer_to_voicecall_and_remote_hangup.log</file>
+        <file>/var/log/tests/oFono_-_Cancel_voicecall.log</file>
+        <file>/var/log/tests/oFono_-_Swap.log</file>
+        <file>/var/log/tests/oFono_-_Release_and_answer.log</file>
+        <file>/var/log/tests/oFono_-_Hold_and_answer.log</file>
+        <file>/var/log/tests/oFono_-_Disable_forwardings.log</file>
+        <file>/var/log/tests/oFono_-_Unconditional_forwarding.log</file>
+        <file>/var/log/tests/oFono_-_Forward_if_busy.log</file>
+        <file>/var/log/tests/oFono_-_Forward_if_no_reply.log</file>
+        <file>/var/log/tests/oFono_-_Forward_if_not_reachable.log</file>
+        <file>/var/log/tests/oFono_-_Send_SMS.log</file>
+        <file>/var/log/tests/oFono_-_Receive_SMS.log</file>
+
+        <file>/var/log/tests/oFono_-_Set_microphone_volume.log</file>
+        <file>/var/log/tests/oFono_-_Set_speaker_volume.log</file>
+        <file>/var/log/tests/oFono_-_Set_muted.log</file>
+
+        <file>/var/log/tests/oFono_-_Call_meters_read.log</file>
+        <file>/var/log/tests/oFono_-_Call_meters_set.log</file>
+        <file>/var/log/tests/oFono_-_Call_meters_reset.log</file>
+        <file>/var/log/tests/oFono_-_Call_meters_near_max_warning.log</file>
+
+        <file>/var/log/tests/oFono_-_Check_barring_properties.log</file>
+        <file>/var/log/tests/oFono_-_Disable_barrings.log</file>
+        <file>/var/log/tests/oFono_-_Disable_incoming_barrings.log</file>
+        <file>/var/log/tests/oFono_-_Disable_outgoing_barrings.log</file>
+        <file>/var/log/tests/oFono_-_Change_password_for_barrings.log</file>
+        <file>/var/log/tests/oFono_-_Call_barrings_test.log</file>
+        <file>/var/log/tests/oFono_-_Propose_scan.log</file>
+        <file>/var/log/tests/oFono_-_SMSC_number_test.log</file>
+        <file>/var/log/tests/oFono_-_Multiparty_call_test.log</file>
+        <file>/var/log/tests/oFono_-_Private_call_test.log</file>
+        <file>/var/log/tests/oFono_-_List_all_properties.log</file>
+      </get>
+    </set>
+
+    <set name="ofono-netreg" feature="Cellular Framework">
+      <case name="oFono - Enable modems"
+        type="Functional">
+        <step>/usr/bin/blts-ofono-tests -l /var/log/tests/oFono_-_Enable_modems.log -en "oFono - Enable modems"</step>
+      </case>
+      <case name="oFono - Set modems online"
+        type="Functional">
+        <step>/usr/bin/blts-ofono-tests -l /var/log/tests/oFono_-_Set_modems_online.log -en "oFono - Set modems online"</step>
+      </case>
+      <case name="oFono - Set modems offline"
+        type="Functional">
+        <step>/usr/bin/blts-ofono-tests -l /var/log/tests/oFono_-_Set_modems_offline.log -en "oFono - Set modems offline"</step>
+      </case>
+      <case name="oFono - Register to network"
+        type="Functional">
+        <step>/usr/bin/blts-ofono-tests -l /var/log/tests/oFono_-_Register_to_network.log -en "oFono - Register to network"</step>
+      </case>
+      <case name="oFono - De-register from network"
+        type="Functional">
+        <step>/usr/bin/blts-ofono-tests -l /var/log/tests/oFono_-_De-register_from_network.log -en "oFono - De-register from network"</step>
+      </case>
+      <get>
+        <file>/var/log/tests/oFono_-_Enable_modems.log</file>
+        <file>/var/log/tests/oFono_-_Set_modems_online.log</file>
+        <file>/var/log/tests/oFono_-_Set_modems_offline.log</file>
+        <file>/var/log/tests/oFono_-_Register_to_network.log</file>
+        <file>/var/log/tests/oFono_-_De-register_from_network.log</file>
+      </get>
+    </set>
+    <set name="ofono-pinhandling" feature="Cellular Framework">
+      <case name="oFono - Change PIN"
+        type="Functional">
+        <step>/usr/bin/blts-ofono-tests -l /var/log/tests/oFono_-_Change_PIN.log -en "oFono - Change PIN"</step>
+      </case>
+      <case name="oFono - Enter PIN"
+        type="Functional">
+        <step>/usr/bin/blts-ofono-tests -l /var/log/tests/oFono_-_Enter_PIN.log -en "oFono - Enter PIN"</step>
+      </case>
+      <case name="oFono - Reset PIN"
+        type="Functional">
+        <step>/usr/bin/blts-ofono-tests -l /var/log/tests/oFono_-_Reset_PIN.log -en "oFono - Reset PIN"</step>
+      </case>
+      <case name="oFono - Lock PIN"
+        type="Functional">
+        <step>/usr/bin/blts-ofono-tests -l /var/log/tests/oFono_-_Lock_PIN.log -en "oFono - Lock PIN"</step>
+      </case>
+      <case name="oFono - Unlock PIN"
+        type="Functional">
+        <step>/usr/bin/blts-ofono-tests -l /var/log/tests/oFono_-_Unlock_PIN.log -en "oFono - Unlock PIN"</step>
+      </case>
+      <get>
+        <file>/var/log/tests/oFono_-_Change_PIN.log</file>
+        <file>/var/log/tests/oFono_-_Enter_PIN.log</file>
+        <file>/var/log/tests/oFono_-_Reset_PIN.log</file>
+        <file>/var/log/tests/oFono_-_Lock_PIN.log.log</file>
+        <file>/var/log/tests/oFono_-_Unlock_PIN.log.log</file>
+      </get>
+    </set>
+  </suite>
+</testdefinition>

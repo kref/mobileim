@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/">
+        <file>CD.qml</file>
+        <file>CDData.qml</file>
+        <file>MyButton.qml</file>
+        <file>images/tri_logy.jpeg</file>
+        <file>images/diabolical.jpg</file>
+        <file>images/eclipse.jpg</file>
+        <file>images/master-of-puppets.jpg</file>
+        <file>images/ride-the-lightning.jpg</file>
+        <file>images/skyforger.jpg</file>
+        <file>images/II.jpg</file>
+    </qresource>
+</RCC>

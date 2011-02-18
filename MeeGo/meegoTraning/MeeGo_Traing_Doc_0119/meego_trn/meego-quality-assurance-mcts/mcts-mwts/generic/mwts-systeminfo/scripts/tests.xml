@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<testdefinition version="0.1">
+  <suite name="mwts-systeminfo-scripts" domain="System">
+
+    <set name="FUTE-SystemInfo" description="SystemInfo functional test cases" feature="System" type="Functional" >
+      <case name="FUTE-SystemInfo_BatteryPower" timeout="15" description=
+        "Purpose
+        Get Device Power type as Battery Power
+        Method
+        Waits QSystemDeviceInfo signals
+        Pre-/Post-Conditions
+        Device is in Battery Power
+        Pass/Fail Criteria
+        Pass if signal of Wall Power is first got and the Battery Power is got.
+        ">
+        <step>min -c -t 'FUTE-SystemInfo_BatteryPower'</step>
+        <step>Plug charger, so device is in Wall Power'</step>
+        <step>Unplug charger, so device is in Battery Power'</step>
+      </case>
+
+      <case name="FUTE-SystemInfo_WallPower" timeout="15" description=
+        "Purpose
+        Get Device Power type as Wall Power
+        Method
+        Waits QSystemDeviceInfo signals
+        Pre-/Post-Conditions
+        Device is in Wall Power
+        Pass/Fail Criteria
+        Pass if signal of Wall Power is first got and the Battery Power is got.
+        ">
+        <step>min -c -t 'FUTE-SystemInfo_WallPowerr'</step>
+        <step>Unplug charger, so device is in Battery Power'</step>
+        <step>Plug charger, so device is in Wall Power'</step>
+      </case>
+    </set>
+
+    <set name="NFT-SystemInfo" description="SystemInfo iterative test cases" feature="Settings" type="Iterative" >
+      <case name="NFT-FUTE-SystemInfo_BatteryPower-ITER" subfeature="Test" timeout="120" description=
+        "Purpose
+        Get Device Power type as Battery Power iterative
+        Method
+        Waits QSystemDeviceInfo signals
+        Pre-/Post-Conditions
+        Device is in Battery Power
+        Pass/Fail Criteria
+        Pass if signal of Wall Power is first got and the Battery Power is got.
+        ">
+        <step>min -c -t 'NFT-FUTE-SystemInfo_BatteryPower-ITER'</step>
+        <step>Plug and unplug charger iterative 10 times'</step>
+      </case>
+    </set>
+  </suite>
+</testdefinition>

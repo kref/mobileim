@@ -1,0 +1,32 @@
+blts-xvideo-tests (0.0.8) unstable; urgency=low
+
+  * Remove obsolete Min support code
+
+ -- Kimmo Myllyvirta <kimmo.myllyvirta@digia.com>  Thu, 16 Dec 2010 11:24:44 +0200
+
+blts-xvideo-tests (0.0.7) unstable; urgency=low
+
+  [ Mika Niinistö, Kimmo Myllyvirta ]
+  * Packaging script updated.
+  * Logging updated to new common library standard.
+
+ -- Kimmo Myllyvirta <kimmo.myllyvirta@digia.com>  Tue, 16 Nov 2010 18:15:28 +0200
+
+blts-xvideo-tests (0.0.6) unstable; urgency=low
+
+  [ Kimmo Myllyvirta ]
+  * Add RPM packaging
+  * Binary name changed to "blts-xvideo-tests"
+  * Separate platform configuration packaging
+
+ -- Kimmo Myllyvirta <kimmo.myllyvirta@digia.com>  Thu, 30 Sep 2010 15:52:19 +0300
+
+blts-xvideo-tests (0.0.5) unstable; urgency=low
+
+  [ Kimmo Myllyvirta ]
+  * Initial upload for Meego (changelog summarized)
+  * 'PutImage with QueryBestSize' -test
+  * 'Notify events' -test. Requests events and tries to trigger events
+    from a different process.
+
+ -- Kari Laakso <kari.laakso@digia.com>  Wed, 08 Sep 2010 10:45:33 +0300

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- tests.xml - Test case descriptions for automation tools.
+
+   Copyright (C) 2000-2010, Nokia Corporation.
+
+   This program is free software: you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation, version 2.
+
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+
+   You should have received a copy of the GNU General Public License
+   along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<testdefinition version="1.0">
+  <suite name="blts-opengles2-tests" domain="Graphics">
+    <set name="gles2-smoke" feature="OpenGL ES 2">
+      <case name="OpenGL-Enumerate GL extensions"
+        description="Lists all GL extensions"
+        type="Functional">
+        <step>/usr/bin/blts-opengles2-tests -l /var/log/tests/OpenGL-Enumerate_GL_extensions.log -en "OpenGL-Enumerate GL extensions"</step>
+      </case>
+      <case name="OpenGL-Enumerate EGL extensions"
+        description="Lists all EGL extensions"
+        type="Functional">
+        <step>/usr/bin/blts-opengles2-tests -l /var/log/tests/OpenGL-Enumerate_EGL_extensions.log -en "OpenGL-Enumerate EGL extensions"</step>
+      </case>
+      <case name="OpenGL-Enumerate EGL configs"
+        description="Lists all EGL configurations"
+        type="Functional">
+        <step>/usr/bin/blts-opengles2-tests -l /var/log/tests/OpenGL-Enumerate_EGL_configs.log -en "OpenGL-Enumerate EGL configs"</step>
+      </case>
+      <case name="OpenGL-Simple triangle"
+        description="Draws simple three vertex rotating triangle"
+        type="Functional">
+        <step>/usr/bin/blts-opengles2-tests -l /var/log/tests/OpenGL-Simple_triangle.log -en "OpenGL-Simple triangle"</step>
+      </case>
+      <get>
+        <file>"/var/log/tests/OpenGL-Enumerate_GL_extensions.log"</file>
+        <file>"/var/log/tests/OpenGL-Enumerate_EGL_extensions.log"</file>
+        <file>"/var/log/tests/OpenGL-Enumerate_EGL_configs.log"</file>
+        <file>"/var/log/tests/OpenGL-Simple_triangle.log"</file>
+      </get>
+    </set>
+
+    <set name="benchmarks" feature="OpenGL ES 2">
+      <case name="OpenGL-Simple blit"
+        description="Draw large textured planes"
+        type="Benchmark">
+        <step>/usr/bin/blts-opengles2-tests -l /var/log/tests/OpenGL-Simple_blit.log -en "OpenGL-Simple blit"</step>
+      </case>
+      <case name="OpenGL-Blit with blend"
+        description="Draw large textured planes. Multiple layers with blend."
+        type="Benchmark">
+        <step>/usr/bin/blts-opengles2-tests -l /var/log/tests/OpenGL-Blit_with_blend.log -en "OpenGL-Blit with blend"</step>
+      </case>
+      <case name="OpenGL-Blit with blend and widgets"
+        description="Draw large textured planes. Multiple layers with blend. Draw 'widgets' on the topmost plane."
+        type="Benchmark">
+        <step>/usr/bin/blts-opengles2-tests -l /var/log/tests/OpenGL-Blit_with_blend_and_widgets.log -en "OpenGL-Blit with blend and widgets"</step>
+      </case>
+      <case name="OpenGL-Blit with blend and widgets with shadows"
+        description="Draw large textured planes. Multiple layers with blend. Draw 'widgets' on the topmost plane. Each widget has a shadow."
+        type="Benchmark">
+        <step>/usr/bin/blts-opengles2-tests -l /var/log/tests/OpenGL-Blit_with_blend_and_widgets_with_shadows.log -en "OpenGL-Blit with blend and widgets with shadows"</step>
+      </case>
+      <case name="OpenGL-Blit with blend and widgets with shadows + particles"
+        description="Draw large textured planes. Multiple layers with blend. Draw 'widgets' on the topmost plane. Each widget has a shadow. Add particles to each widget."
+        type="Benchmark">
+        <step>/usr/bin/blts-opengles2-tests -l /var/log/tests/OpenGL-Blit_with_blend_and_widgets_with_shadows_+_particles.log -en "OpenGL-Blit with blend and widgets with shadows + particles"</step>
+      </case>
+      <case name="OpenGL-Blit with blend and widgets with shadows + particles + rotate"
+        description="Draw large textured planes. Multiple layers with blend. Draw 'widgets' on the topmost plane. Each widget has a shadow. Add particles to each widget. Rotate the entire scene."
+        type="Benchmark">
+        <step>/usr/bin/blts-opengles2-tests -l /var/log/tests/OpenGL-Blit_with_blend_and_widgets_with_shadows_+_particles_+_rotate.log -en "OpenGL-Blit with blend and widgets with shadows + particles + rotate"</step>
+      </case>
+      <case name="OpenGL-Blit with blend and widgets with shadows + particles + rotate + zoom"
+        description="Draw large textured planes. Multiple layers with blend. Draw 'widgets' on the topmost plane. Each widget has a shadow. Add particles to each widget. Rotate and zoom the entire scene."
+        type="Benchmark">
+        <step>/usr/bin/blts-opengles2-tests -l /var/log/tests/OpenGL-Blit_with_blend_and_widgets_with_shadows_+_particles_+_rotate_+_zoom.log -en "OpenGL-Blit with blend and widgets with shadows + particles + rotate + zoom"</step>
+      </case>
+      <case name="OpenGL-Blit with blend and widgets with shadows + particles + rotate + zoom and blur all"
+        description="Draw large textured planes. Multiple layers with blend. Draw 'widgets' on the topmost plane. Each widget has a shadow. Add particles to each widget. Rotate and zoom the entire scene. Add blur."
+        type="Benchmark">
+        <step>/usr/bin/blts-opengles2-tests -l /var/log/tests/OpenGL-Blit_with_blend_and_widgets_with_shadows_+_particles_+_rotate_+_zoom_and_blur_all.log -en "OpenGL-Blit with blend and widgets with shadows + particles + rotate + zoom and blur all"</step>
+      </case>
+      <case name="OpenGL-Blit with blend and animated widgets with shadows"
+        description="Draw large textured planes. Multiple layers with blend. Draw animated 'widgets' on the topmost plane. Each widget has a shadow."
+        type="Benchmark">
+        <step>/usr/bin/blts-opengles2-tests -l /var/log/tests/OpenGL-Blit_with_blend_and_animated_widgets_with_shadows.log -en "OpenGL-Blit with blend and animated widgets with shadows"</step>
+      </case>
+      <case name="OpenGL-Polygons-per-second"
+        description="Synthetic test. Draws a one million triangle sphere."
+        type="Benchmark">
+        <step>/usr/bin/blts-opengles2-tests -l /var/log/tests/OpenGL-Polygons-per-second.log -en "OpenGL-Polygons-per-second"</step>
+      </case>
+      <case name="OpenGL-Fillrate test"
+        description="Synthetic test. Fills a plane with changing color."
+        type="Benchmark">
+        <step>/usr/bin/blts-opengles2-tests -l /var/log/tests/OpenGL-Fillrate_test.log -en "OpenGL-Fillrate test"</step>
+      </case>
+      <case name="OpenGL-Texels-per-second"
+        description="Synthetic test. Fills a plane with big texture."
+        type="Benchmark">
+        <step>/usr/bin/blts-opengles2-tests -l /var/log/tests/OpenGL-Texels-per-second.log -en "OpenGL-Texels-per-second"</step>
+      </case>
+      <case name="OpenGL-Fragment shader performance"
+        description="Synthetic test. Calculates and draws a mandelbrot set with waves on fragment shader."
+        type="Benchmark">
+        <step>/usr/bin/blts-opengles2-tests -l /var/log/tests/OpenGL-Fragment_shader_performance.log -en "OpenGL-Fragment shader performance"</step>
+      </case>
+      <case name="OpenGL-Vertex shader performance"
+        description="Synthetic test. Uses a heavy algorithm to deform a plane to wavy ball."
+        type="Benchmark">
+        <step>/usr/bin/blts-opengles2-tests -l /var/log/tests/OpenGL-Vertex_shader_performance.log -en "OpenGL-Vertex shader performance"</step>
+      </case>
+      <case name="OpenGL-Convolution filter"
+        description="Configurable, generic convolution filter test."
+        type="Benchmark">
+        <step>/usr/bin/blts-opengles2-tests -l /var/log/tests/OpenGL-Convolution_filter.log -en "OpenGL-Convolution filter"</step>
+      </case>
+      <get>
+        <file>/var/log/tests/OpenGL-Simple_blit.log</file>
+        <file>/var/log/tests/OpenGL-Blit_with_blend.log</file>
+        <file>/var/log/tests/OpenGL-Blit_with_blend_and_widgets.log</file>
+        <file>/var/log/tests/OpenGL-Blit_with_blend_and_widgets_with_shadows.log</file>
+        <file>/var/log/tests/OpenGL-Blit_with_blend_and_widgets_with_shadows_+_particles.log</file>
+        <file>/var/log/tests/OpenGL-Blit_with_blend_and_widgets_with_shadows_+_particles_+_rotate.log</file>
+        <file>/var/log/tests/OpenGL-Blit_with_blend_and_widgets_with_shadows_+_particles_+_rotate_+_zoom.log</file>
+        <file>/var/log/tests/OpenGL-Blit_with_blend_and_widgets_with_shadows_+_particles_+_rotate_+_zoom_and_blur_all.log</file>
+        <file>/var/log/tests/OpenGL-Blit_with_blend_and_animated_widgets_with_shadows.log</file>
+        <file>/var/log/tests/OpenGL-Polygons-per-second.log</file>
+        <file>/var/log/tests/OpenGL-Fillrate_test.log</file>
+        <file>/var/log/tests/OpenGL-Texels-per-second.log</file>
+        <file>/var/log/tests/OpenGL-Fragment_shader_performance.log</file>
+        <file>/var/log/tests/OpenGL-Vertex_shader_performance.log</file>
+        <file>/var/log/tests/OpenGL-Convolution_filter.log</file>
+      </get>
+    </set>
+  </suite>
+</testdefinition>

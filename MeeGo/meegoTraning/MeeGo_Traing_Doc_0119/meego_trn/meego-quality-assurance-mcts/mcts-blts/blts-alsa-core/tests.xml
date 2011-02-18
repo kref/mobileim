@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- tests.xml - Test case descriptions for automation tools.
+
+   Copyright (C) 2000-2010, Nokia Corporation.
+
+   This program is free software: you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation, version 2.
+
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+
+   You should have received a copy of the GNU General Public License
+   along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<testdefinition version="1.0">
+  <suite name="blts-alsa-core-tests" domain="Multimedia">
+    <set name="alsa-core-tests" feature="Audio Adaptation">
+      <case name="Core-ALSA core presence check"
+        type="Functional"
+        description="Checks needed /dev/snd* entries and kernel modules">
+        <step>/usr/bin/blts-alsa-core-tests -l /var/log/tests/Core-ALSA_core_presence_check.log -e 1</step>
+      </case>
+      <case name="Core-ALSA core open and close PCM devices"
+        type="Functional"
+        description="Opens and queries basic information from all available PCM devices">
+        <step>/usr/bin/blts-alsa-core-tests -l /var/log/tests/Core-ALSA_core_open_and_close_PCM_devices.log -e 2</step>
+      </case>
+      <case name="Core-ALSA core open and close timer"
+        type="Functional"
+        description="Opens and queries basic information from ALSA timers">
+        <step>/usr/bin/blts-alsa-core-tests -l /var/log/tests/Core-ALSA_core_open_and_close_timer.log -e 3</step>
+      </case>
+      <case name="Core-ALSA core open and close controls"
+        type="Functional"
+        description="Opens and queries basic information from control devices">
+        <step>/usr/bin/blts-alsa-core-tests -l /var/log/tests/Core-ALSA_core_open_and_close_controls.log -e 4</step>
+      </case>
+      <case name="Core-ALSA core open and close hwdeps"
+        type="Functional"
+        description="Opens and queries basic information from hw dependency -devices">
+        <step>/usr/bin/blts-alsa-core-tests -l /var/log/tests/Core-ALSA_core_open_and_close_hwdeps.log -e 5</step>
+      </case>
+      <case name="Core-ALSA core enumerate control elements"
+        type="Functional"
+        description="Queries information of all control elements and their current settings from all control devices">
+        <step>/usr/bin/blts-alsa-core-tests -l /var/log/tests/Core-ALSA_core_enumerate_control_elements.log -e 6</step>
+      </case>
+      <case name="Core-ALSA core power management"
+        type="Functional"
+        description="Sets and queries power state from all devices">
+        <step>/usr/bin/blts-alsa-core-tests -l /var/log/tests/Core-ALSA_core_power_management.log -e 7</step>
+      </case>
+      <case name="Core-ALSA core enumerate devices with control interface"
+        type="Functional"
+        description="Queries information about all pcm, hw dep and rawmidi devices from control device">
+        <step>/usr/bin/blts-alsa-core-tests -l /var/log/tests/Core-ALSA_core_enumerate_devices_with_control_interface.log -e 8</step>
+      </case>
+      <case name="Core-ALSA core Add and remove control element"
+        type="Functional"
+        description="Creates, replaces and removes user control element. Tests also element lock/unlock.">
+        <step>/usr/bin/blts-alsa-core-tests -l /var/log/tests/Core-ALSA_core_Add_and_remove_control_element.log -e 9</step>
+      </case>
+      <!-- TODO: rest of the test cases are generated dynamically from given configuration file -->
+      <get>
+        <file>/var/log/tests/Core-ALSA_core_presence_check.log</file>
+        <file>/var/log/tests/Core-ALSA_core_open_and_close_PCM_devices.log</file>
+        <file>/var/log/tests/Core-ALSA_core_open_and_close_timer.log</file>
+        <file>/var/log/tests/Core-ALSA_core_open_and_close_controls.log</file>
+        <file>/var/log/tests/Core-ALSA_core_open_and_close_hwdeps.log</file>
+        <file>/var/log/tests/Core-ALSA_core_enumerate_control_elements.log</file>
+        <file>/var/log/tests/Core-ALSA_core_power_management.log</file>
+        <file>/var/log/tests/Core-ALSA_core_enumerate_devices_with_control_interface.log</file>
+        <file>/var/log/tests/Core-ALSA_core_Add_and_remove_control_element.log</file>
+      </get>
+    </set>
+  </suite>
+</testdefinition>

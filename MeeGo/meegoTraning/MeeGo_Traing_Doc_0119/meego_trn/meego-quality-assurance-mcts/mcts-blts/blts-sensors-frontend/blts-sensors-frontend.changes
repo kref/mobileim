@@ -1,0 +1,13 @@
+* Tue 16 Nov 2010 Pasi Matilainen <pasi.matilainen@digia.com> - 0.1.4
+- Packaging script updated.
+- Logging updated to new common library standard.
+
+* Fri  8 Oct 2010 Kari Laakso <kari.laakso@digia.com> - 0.1.3
+- Initial upload for Meego
+
+* Thu  7 Oct 2010 Pasi Matilainen <pasi.matilainen@digia.com> - 0.1.2
+- Updated version number to match Debian package
+
+* Wed 29 Sep 2010 Kimmo Myllyvirta <kimmo.myllyvirta@digia.com> - 0.1.1
+- Initial RPM packaging for MeeGo
+

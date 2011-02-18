@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- tests.xml - Test case definitions for test automation
+
+   Copyright (C) 2000-2010, Nokia Corporation.
+
+   This program is free software: you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation, version 2.
+
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+
+   You should have received a copy of the GNU General Public License
+   along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+
+<testdefinition version="1.0">
+  <suite name="blts-fbdev-tests" domain="Display">
+    <set name="framebuffer-tests" feature="Framebuffer">
+      <case name="Core-Framebuffer read frame buffer information with ioctl"
+        type="Functional">
+        <step>/usr/bin/blts-fbdev-tests -l /var/log/tests/Core-Framebuffer_read_frame_buffer_info.log -e 1</step>
+      </case>
+      <case name="Core-Framebuffer set blanking levels"
+        type="Functional">
+        <step>/usr/bin/blts-fbdev-tests -l /var/log/tests/Core-Framebuffer_set_blanking_levels.log -e 2</step>
+      </case>
+      <case name="Core-Framebuffer 1-pixel uncached read"
+        type="Functional">
+        <step>/usr/bin/blts-fbdev-tests -l /var/log/tests/Core-Framebuffer_1-pixel_uncached_read.log -e 3</step>
+      </case>
+      <case name="Core-Framebuffer 1-pixel uncached write"
+        type="Functional">
+        <step>/usr/bin/blts-fbdev-tests -l /var/log/tests/Core-Framebuffer_1-pixel_uncached_write.log -e 4</step>
+      </case>
+      <case name="Core-Framebuffer 1-pixel uncached modify"
+        type="Functional">
+        <step>/usr/bin/blts-fbdev-tests -l /var/log/tests/Core-Framebuffer_1-pixel_uncached_modify.log -e 5</step>
+      </case>
+      <case name="Core-Framebuffer fullscreen buffer read"
+        type="Functional">
+        <step>/usr/bin/blts-fbdev-tests -l /var/log/tests/Core-Framebuffer_fullscreen_buffer_reead.log -e 6</step>
+      </case>
+      <case name="Core-Framebuffer fullscreen buffer write"
+        type="Functional">
+        <step>/usr/bin/blts-fbdev-tests -l /var/log/tests/Core-Framebuffer_fullscreen_buffer_write.log -e 7</step>
+      </case>
+      <case name="Core-Framebuffer fullscreen buffer modify"
+        type="Functional">
+        <step>/usr/bin/blts-fbdev-tests -l /var/log/tests/Core-Framebuffer_fullscreen_buffer_modify.log -e 8</step>
+      </case>
+      <get>
+        <file>/var/log/tests/Core-Framebuffer_read_frame_buffer_info.log</file>
+        <file>/var/log/tests/Core-Framebuffer_set_blanking_levels.log</file>
+        <file>/var/log/tests/Core-Framebuffer_1-pixel_uncached_read.log</file>
+        <file>/var/log/tests/Core-Framebuffer_1-pixel_uncached_write.log</file>
+        <file>/var/log/tests/Core-Framebuffer_1-pixel_uncached_modify.log</file>
+        <file>/var/log/tests/Core-Framebuffer_fullscreen_buffer_reead.log</file>
+        <file>/var/log/tests/Core-Framebuffer_fullscreen_buffer_write.log</file>
+        <file>/var/log/tests/Core-Framebuffer_fullscreen_buffer_modify.log</file>
+      </get>
+    </set>
+    <set name="backlight-tests" feature="Backlight">
+      <case name="Core-Backlight verify backlight levels"
+        type="Functional">
+        <step>/usr/bin/blts-fbdev-tests -l /var/log/tests/Core-Backlight_verify_backlight_levels.log -e 9</step>
+      </case>
+      <case name="Core-Backlight linear backlight level changes"
+        type="Functional">
+        <step>/usr/bin/blts-fbdev-tests -l /var/log/tests/Core-Backlight_linear_backlight_level_changes.log -e 10</step>
+      </case>
+      <case name="Core-Backlight logarithmic backlight level changes"
+        type="Functional">
+        <step>/usr/bin/blts-fbdev-tests -l /var/log/tests/Core-Backlight_logarithmic_backlight_level_changes.log -e 11</step>
+      </case>
+      <get>
+        <file>/var/log/tests/Core-Backlight_verify_backlight_levels.log</file>
+        <file>/var/log/tests/Core-Backlight_linear_backlight_level_changes.log</file>
+        <file>/var/log/tests/Core-Backlight_logarithmic_backlight_level_changes.log</file>
+      </get>
+    </set>
+  </suite>
+</testdefinition>

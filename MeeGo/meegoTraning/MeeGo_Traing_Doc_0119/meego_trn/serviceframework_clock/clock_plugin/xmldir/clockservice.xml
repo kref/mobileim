@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SFW version="1.1">
+<service>
+    <name>ClockService</name>
+    <filepath>clock_plugin</filepath>>
+    <description>A try-out to learn how to use the service framework</description>
+    <interface>
+        <name>com.digia.qt.example.clock_service</name>
+        <version>1.0</version>
+        <description></description>
+        <capabilities></capabilities>
+    </interface>
+</service>
+</SFW>

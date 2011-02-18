@@ -1,0 +1,34 @@
+blts-fbdev-tests (0.0.9) unstable; urgency=low
+
+  * Bugfix: Backlight tests now poll for the brightness value change after setting it to a new value
+
+ -- Mika Niinistö <mika.niinisto@digia.com>  Fri, 07 Jan 2011 13:57:02 +0200
+
+blts-fbdev-tests (0.0.8) unstable; urgency=low
+
+  * Added six new performance test cases
+
+ -- Mika Niinistö <mika.niinist@digia.com>  Fri, 03 Dec 2010 14:56:36 +0200
+
+blts-fbdev-tests (0.0.7) unstable; urgency=low
+
+  [ Mika Niinistö, Kimmo Myllyvirta ]
+  * Packaging script updated.
+  * Logging updated to new common library standard.
+
+ -- Mika Niinistö <mika.niinisto@digia.com>  Tue, 16 Nov 2010 17:22:56 +0200
+
+blts-fbdev-tests (0.0.6) unstable; urgency=low
+
+  [ Mika Niinistö, Kimmo Myllyvirta, Jussi Saavalainen ]
+  * Initial upload for Meego (changelog summarized)
+  * Add RPM packaging
+  * Port to use libbltscommon library
+  * Add configuration file support
+  * Add case: Set blanking levels - Blank and unblank device screen via framebuffer device
+  * Add case: Verify backlight levels - Verify via backlight framework that backlight limits are handled
+  * Add case: Linear backlight level changes - Linearly go through all backlight levels of the display
+  * Add case: Logarithmic backlight level changes - With a logarithmic curve, test backlight levels from 1 to maximum
+
+ -- Kimmo Myllyvirta <kimmo.myllyvirta@digia.com>  Thu, 30 Sep 2010 14:37:28 +0300
+

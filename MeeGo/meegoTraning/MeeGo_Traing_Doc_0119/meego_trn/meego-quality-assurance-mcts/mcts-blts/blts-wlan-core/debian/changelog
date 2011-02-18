@@ -1,0 +1,41 @@
+blts-wlan-core-tests (0.1.5) unstable; urgency=low
+
+  [ Jussi Saavalainen ]
+  * Trivial resource leak fix in phy lookup failure path
+
+ -- Jussi Saavalainen <jussi.saavalainen@digia.com>  Tue, 11 Jan 2011 12:01:35 +0200
+
+blts-wlan-core-tests (0.1.4) unstable; urgency=low
+
+  [ Jussi Saavalainen ]
+  * Fix crash when nl80211 driver loaded but no devices present
+  [ Kimmo Myllyvirta ]
+  * Tests.xml update
+
+ -- Jussi Saavalainen <jussi.saavalainen@digia.com>  Thu, 16 Dec 2010 11:17:41 +0200
+
+blts-wlan-core-tests (0.1.3) unstable; urgency=low
+
+  * Add Establish new adhoc network test.
+  * Add Join established adhoc network test.
+
+ -- Aki Nyman <aki.nyman@digia.com>  Wed, 24 Nov 2010 15:55:00 +0300
+
+blts-wlan-core-tests (0.1.2) unstable; urgency=low
+
+  * Add associate with WPA2-PSK AP test.
+
+ -- Jussi Saavalainen <jussi.saavalainen@digia.com>  Tue, 28 Sep 2010 13:55:58 +0300
+
+blts-wlan-core-tests (0.1.1) unstable; urgency=low
+
+  * Add associate with WEP AP test.
+  * Updates to scan for specific AP and associate with open AP tests.
+
+ -- Jussi Saavalainen <jussi.saavalainen@digia.com>  Fri, 20 Aug 2010 13:53:41 +0300
+
+blts-wlan-core-tests (0.1.0) unstable; urgency=low
+
+  * Created package
+
+ -- Jussi Saavalainen <jussi.saavalainen@digia.com>  Mon, 5 Jul 2010 15:22:00 +0200

@@ -1,0 +1,24 @@
+* Tue 16 Dec 2010 Jussi Saavalainen <jussi.saavalainen@digia.com> - 0.0.15
+- [Kimmo Myllyvirta] Tests.xml update
+- Ensure failure when no data transfered
+- BKL removal from kernel modules for Linux 2.6.36+ support
+
+* Tue 16 Nov 2010 Jussi Saavalainen <jussi.saavalainen@digia.com> - 0.0.14
+- Packaging script updated.
+- Logging updated to new common library standard.
+
+* Thu 28 Oct 2010 Jussi Saavalainen <jussi.saavalainen@digia.com> - 0.0.13
+- Remove unused dependencies to glib and dbus-glib
+
+* Wed 29 Sep 2010 Jussi Saavalainen <jussi.saavalainen@digia.com> - 0.0.12
+- Separate platform configuration packaging
+- Add RPM packaging
+- Binary name changed to "blts-usb-tests"
+
+* Thu 02 Sep 2010 Kari Laakso <kari.laakso@digia.com> - 0.0.11
+- Initial upload for Meego (changelog summarized)
+- Support Linux 2.6.35+
+- Support for read/write simultaneously for multiple endpoints.
+- Vendor ID set as Nokia to prevent conflicts with random usb modules.
+- Support for bulk, interrupt and isochronous endpoints.
+- Configurable driver setup via test runner.

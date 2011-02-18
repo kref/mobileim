@@ -1,0 +1,62 @@
+#!/usr/bin/python
+# Copyright (C) 2008-2010, Intel Corporation.
+# DESCR: oFono radio setting test script
+#
+# This program is free software; you can redistribute it and/or modify it
+# under the terms and conditions of the GNU General Public License,
+# version 2, as published by the Free Software Foundation.
+#
+# This program is distributed in the hope it will be useful, but WITHOUT
+# ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+# FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+# for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program; if not, write to the Free Software Foundation, Inc., 59 Temple
+# Place - Suite 330, Boston, MA 02111-1307 USA.
+#
+# Authors:
+#       Li,Zhigang  <zhigang.li@intel.com>
+#
+
+import sys
+import dbus
+
+def print_useage(s):
+	print "Useage: %s <set>  <value>" % (s)
+	print "Useage: %s properties" % (s)
+
+if len(sys.argv) < 2:
+	print_useage(sys.argv[0])
+	sys.exit(1);
+
+bus = dbus.SystemBus()
+
+manager = dbus.Interface(bus.get_object('org.ofono', '/'),
+		'org.ofono.Manager')
+
+modems = manager.GetModems()
+radio = dbus.Interface(bus.get_object('org.ofono', modems[0][0]),
+			'org.ofono.RadioSettings')
+
+if (sys.argv[1] == 'set'):
+	if len(sys.argv) < 3:
+		print"you have to input the value:gsm,lte,umts or any"
+		sys.exit(1)
+	try:
+		radio.SetProperty("TechnologyPreference", sys.argv[2])
+		sys.exit(0)
+	except dbus.DBusException, e:
+		print "Unable to set radio properties: ", e
+		sys.exit(1)
+
+if (sys.argv[1] == 'properties'):
+	try:
+		print radio.GetProperties()
+		sys.exit(0)
+	except dbus.DBusException, e:
+		print "Unable to get radio properties: ", e
+		sys.exit(1)
+
+print "Unkonown command:"
+sys.exit(1)

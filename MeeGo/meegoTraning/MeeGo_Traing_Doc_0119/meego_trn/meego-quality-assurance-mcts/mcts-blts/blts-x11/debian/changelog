@@ -1,0 +1,30 @@
+blts-x11-tests (0.0.15) unstable; urgency=low
+
+  * Tests.xml update
+
+ -- Kimmo Myllyvirta <kimmo.myllyvirta@digia.com>  Thu, 16 Dec 2010 11:21:58 +0200
+
+blts-x11-tests (0.0.14) unstable; urgency=low
+
+  [ Mika Niinistö, Kimmo Myllyvirta ]
+  * Packaging script updated.
+  * Logging updated to new common library standard.
+
+ -- Kimmo Myllyvirta <kimmo.myllyvirta@digia.com>  Tue, 16 Nov 2010 18:10:15 +0200
+
+blts-x11-tests (0.0.13) unstable; urgency=low
+
+  [ Kimmo Myllyvirta ]
+  * Add RPM packaging
+  * Binary name changed to "blts-x11-tests"
+
+ -- Kimmo Myllyvirta <kimmo.myllyvirta@digia.com>  Thu, 30 Sep 2010 15:48:04 +0300
+
+blts-x11-tests (0.0.12) unstable; urgency=low
+
+  [ Kimmo Myllyvirta ]
+  * Initial upload for Meego (changelog summarized)
+  * Benchmarks for XRender (blts_xrender_bench)
+  * X11 test cases.
+
+ -- Kari Laakso <kari.laakso@digia.com>  Wed, 08 Sep 2010 15:32:01 +0300

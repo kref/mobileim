@@ -1,0 +1,21 @@
+blts-input-devices-tests (0.0.3) unstable; urgency=low
+
+  * Tests.xml updated
+
+ -- Kimmo Myllyvirta <Kimmo.Myllyvirta@digia.com>  Thu, 16 Dec 2010 10:59:47 +0200
+
+blts-input-devices-tests (0.0.2) unstable; urgency=low
+
+  [ Mika Niinistö, Kimmo Myllyvirta ]
+  * Packaging script updated.
+  * Logging updated to new common library standard.
+
+ -- Kimmo Myllyvirta <Kimmo.Myllyvirta@digia.com>  Tue, 16 Nov 2010 17:26:28 +0200
+
+blts-input-devices-tests (0.0.1) unstable; urgency=low
+
+  * Initial upload for Meego
+  * Test cases include; query information from configured input devices, and
+    simple touchscreen tests
+
+ -- Kimmo Myllyvirta <Kimmo.Myllyvirta@digia.com>  Wed, 29 Sep 2010 11:52:29 +0300

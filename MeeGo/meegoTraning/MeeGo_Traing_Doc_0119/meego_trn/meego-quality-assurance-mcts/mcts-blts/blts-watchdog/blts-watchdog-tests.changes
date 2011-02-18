@@ -1,0 +1,13 @@
+* Thu 16 Dec 2010 Kimmo Myllyvirta <kimmo.myllyvirta@digia.com> - 0.0.8
+- Remove obsolete Min support code
+
+* Tue 16 Nov 2010 Kimmo Myllyvirta <kimmo.myllyvirta@digia.com> - 0.0.7
+- Packaging script updated.
+- Logging updated to new common library standard.
+- Add missing test selectors to tests.xml. Fixes: BMC#10033
+
+* Fri 24 Sep 2010 Kimmo Myllyvirta <kimmo.myllyvirta@digia.com> - 0.0.6
+- Initial upload for Meego
+- Test cases include; querying watchdog information and sending keepalive
+  messages to watchdog
+

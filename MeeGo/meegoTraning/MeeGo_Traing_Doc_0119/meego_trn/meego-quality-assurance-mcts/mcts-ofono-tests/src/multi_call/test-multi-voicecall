@@ -1,0 +1,161 @@
+#!/usr/bin/python
+# Copyright (C) 2008-2010, Intel Corporation.
+# DESCR: oFono multiparty call test script
+#
+# This program is free software; you can redistribute it and/or modify it
+# under the terms and conditions of the GNU General Public License,
+# version 2, as published by the Free Software Foundation.
+#
+# This program is distributed in the hope it will be useful, but WITHOUT
+# ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+# FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+# for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program; if not, write to the Free Software Foundation, Inc., 59 Temple
+# Place - Suite 330, Boston, MA 02111-1307 USA.
+#
+# Authors:
+#       Li,Zhigang  <zhigang.li@intel.com>
+#
+
+import sys
+import dbus
+
+bus = dbus.SystemBus()
+
+manager = dbus.Interface(bus.get_object('org.ofono', '/'),
+					'org.ofono.Manager')
+					
+modems = manager.GetModems()	
+
+for path, properties in modems:
+	
+
+	if "org.ofono.VoiceCallManager" not in properties["Interfaces"]:
+		continue
+
+	voicecall = dbus.Interface(bus.get_object('org.ofono', path),
+					'org.ofono.VoiceCallManager')
+
+
+if len(sys.argv) < 2:
+	print """Usage: %s <command>
+	holdandanswer 
+	releaseandanswer
+	multipartycall
+	getproperties
+	privatechat [0,1...]
+	hangupmultiparty
+	""" % sys.argv[0]
+	sys.exit(1)
+
+if sys.argv[1] == "holdandanswer":
+	try:
+		voicecall.HoldAndAnswer()
+		sys.exit(0)
+	except dbus.DBusException, e:
+		print "Unable to hold and answer the call: ", e
+		sys.exit(1)
+	sys.exit(0)
+
+if sys.argv[1] == "releaseandanswer":
+	try:
+		voicecall.ReleaseAndAnswer()
+		sys.exit(0)
+	except dbus.DBusException, e:
+		print "Unable to release and answer the call: ", e
+		sys.exit(1)
+
+if sys.argv[1] == "holdandrelease":
+	try:
+		voicecall.SwapCalls()
+		sys.exit(0)
+	except dbus.DBusException, e:
+		print "Unable swap the call: ", e
+		sys.exit(1)
+ 
+if sys.argv[1] == "multipartycall":
+	try:
+		muti =  voicecall.CreateMultiparty()
+		sys.exit(0)
+	except dbus.DBusException, e:
+		print "Unable to create multiparty call: ", e
+		sys.exit(1)
+
+if sys.argv[1] == "getproperties":
+        
+	for path, properties in modems:
+		  
+	  for interface in properties["Interfaces"]:
+		object = dbus.Interface(bus.get_object('org.ofono', path),
+								interface)
+
+		try:
+			properties = object.GetProperties()
+		except:
+			continue
+	        for key in properties.keys():	 
+	          		
+		  if key in ["EmergencyNumbers"]:
+		    val = str(properties[key])
+		    print " EmergencyNumber is %s" %val	  
+	
+	
+	
+	try:
+		
+		propertie = voicecall.GetCalls()
+	except dbus.DBusException, e:
+		print "Unable to get properties of call: ", e
+		sys.exit(1)
+
+
+	for path, properties in propertie:
+		print "    [ %s ]" % (path)
+		call = dbus.Interface(bus.get_object('org.ofono', path),
+                                                   'org.ofono.VoiceCall')
+               	properties = call.GetProperties()
+               	print "Call %s, Status: %s, LineId: %s" % (path, properties['State'], properties['LineIdentification'])
+
+		for key in properties.keys():
+	 		val = str(properties[key])
+			print "        %s = %s" % (key, val)
+			print
+			
+		if properties.has_key('StartTime'):
+			print " Time is: %s" % (properties['StartTime'])	
+		
+
+
+	sys.exit(0)
+
+if sys.argv[1] == "privatechat":
+
+	try:
+	        manager = dbus.Interface(bus.get_object('org.ofono', path),
+						'org.ofono.VoiceCallManager')
+
+		mpty = manager.PrivateChat(sys.argv[2])
+		
+	except dbus.DBusException, e:
+		print "Unable to private chat with the call: ", e
+		sys.exit(1)
+	
+	
+	sys.exit(0)			   
+						   
+
+
+
+if sys.argv[1] == "hangupmultiparty":
+	try:
+ 		voicecall.HangupMultiparty()
+		sys.exit(0)
+	except dbus.DBusException, e:
+		print "Unable to hangup multiparty call: ", e
+		sys.exit(1)
+
+print "Unknown command"
+sys.exit(1)
+

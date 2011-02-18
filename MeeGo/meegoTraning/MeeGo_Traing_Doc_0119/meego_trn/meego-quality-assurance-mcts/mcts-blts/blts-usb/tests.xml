@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- tests.xml - Test case descriptions for automation tools.
+
+   Copyright (C) 2000-2010, Nokia Corporation.
+
+   This program is free software: you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation, version 2.
+
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+
+   You should have received a copy of the GNU General Public License
+   along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+<testdefinition version="1.0">
+  <suite name="blts-usb-tests" domain="Core"
+    description="
+      identification USB
+        Test runner for USB testing
+      Build and install instructions
+        The package should build cleanly with GCC 4.x with the mentioned libraries.
+        The preferred way is to use the Debian packaging tools for the build; these
+        will run Autotools for configuration and makefile generation.
+        The package builds (from the source tree root) with
+         $ dpkg-buildpackage
+        ( you may need some combination of '-rfakeroot', '-uc', '-us', etc, depending
+          on your system configuration )
+        Alternatively, the packagin can be skipped by just running with Autotools:
+         $ ./autogen.sh
+         $ ./configure
+         $ make
+      Preconditions
+         Host and peripheral device using test modules
+      Run instructions
+        blts-usb-tests
+        or
+        blts-usb-tests -e [test number]
+        or
+        blts-usb-tests -C [config file]
+        NOTE: Default config file is installed to /usr/share/blts-usb-tests/blts-usb-tests.cnf
+      Post conditions
+        None
+      Required test data
+         /usr/share/blts-usb-tests/blts-usb-tests.cnf
+      Other material and references
+        http://
+      Disclaimers
+        (c) 2010 Nokia Corporation
+    ">
+
+    <set name="usb-tests" feature="USB">
+      <case name="USB - Setup host driver"
+        subfeature="Initialization"
+        type="Functional"
+        timeout="1000"
+        description="
+        Purpose
+         Initializes host driver for test execution.
+        Method
+         Test modules are used for data transfer on host and device
+        Preconditions
+         Host and peripheral device using test modules
+        Run Instructions
+         Run from command prompt
+        Pass/Fail criteria
+         Test will output failed / passed
+        Postconditions
+         -
+        Test enviroment
+         Any device with USB host capability and device with USB peripheral capability
+        References
+         http://
+        Change history
+         Initial documentation 6.5.2010
+      ">
+        <step>/usr/bin/blts-usb-tests -l /var/log/tests/USB_-_Setup_host_driver.log -en "USB - Setup host driver"</step>
+      </case>
+
+      <case name="USB - Setup peripheral driver"
+        subfeature="Initialization"
+        type="Functional"
+        timeout="1000"
+        description="
+        Purpose
+         Initializes peripheral driver for test execution.
+        Method
+         Test modules are used for data transfer on host and device
+        Preconditions
+         Host and peripheral device using test modules
+        Run Instructions
+         Run from command prompt
+        Pass/Fail criteria
+         Test will output failed / passed
+        Postconditions
+         -
+        Test enviroment
+         Any device with USB host capability and device with USB peripheral capability
+        References
+         http://
+        Change history
+         Initial documentation 6.5.2010
+      ">
+        <step>/usr/bin/blts-usb-tests -l /var/log/tests/USB_-_Setup_peripheral_driver.log -en "USB - Setup peripheral driver"</step>
+      </case>
+
+      <case name="USB - Read test"
+        subfeature="Data transfer"
+        type="Functional"
+        timeout="1000"
+        description="
+        Purpose
+         Tests reading data via endpoints
+        Method
+         Test modules are used for data transfer on host and device
+        Preconditions
+         Host and peripheral device using test modules
+        Run Instructions
+         Run from command prompt
+        Pass/Fail criteria
+         Test will output failed / passed
+        Postconditions
+         -
+        Test enviroment
+         Any device with USB host capability and device with USB peripheral capability
+        References
+         http://
+        Change history
+         Initial documentation 6.5.2010
+      ">
+        <step>/usr/bin/blts-usb-tests -l /var/log/tests/USB_-_Read_test.log -en "USB - Read test"</step>
+      </case>
+
+      <case name="USB - Write test"
+        subfeature="Data transfer"
+        type="Functional"
+        timeout="1000"
+        description="
+        Purpose
+         Tests writing data via endpoints
+        Method
+         Test modules are used for data transfer on host and device
+        Preconditions
+         Host and peripheral device using test modules
+        Run Instructions
+         Run from command prompt
+        Pass/Fail criteria
+         Test will output failed / passed
+        Postconditions
+         -
+        Test enviroment
+         Any device with USB host capability and device with USB peripheral capability
+        References
+         http://
+        Change history
+         Initial documentation 6.5.2010
+      ">
+        <step>/usr/bin/blts-usb-tests -l /var/log/tests/USB_-_Write_test.log -en "USB - Write test"</step>
+      </case>
+
+      <get>
+        <!-- Add files to retrieve (logs etc) after running set here.
+             Quote spaces! -->
+        <file>/var/log/tests/USB_-_Setup_host_driver.log</file>
+        <file>/var/log/tests/USB_-_Setup_peripheral_driver.log</file>
+        <file>/var/log/tests/USB_-_Read_test.log</file>
+        <file>/var/log/tests/USB_-_Write_test.log</file>
+      </get>
+    </set>
+
+  </suite>
+</testdefinition>

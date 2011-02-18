@@ -1,0 +1,110 @@
+Overview
+
+This package contains functional tests for the generic 'fbdev' frame buffer
+devices for Linux mobile platforms.
+
+
+Requirements
+
+Running the tests in the package requires
+  * linux >= 2.6.15
+  * GNU libc >= 2.1
+
+Optionally, a min test framework module will be built if it is present.
+
+
+Building the package
+
+The package should build cleanly with GCC 4.x with the mentioned libraries.
+The preferred way is to use the Debian packaging tools for the build; these
+will run Autotools for configuration and makefile generation.
+
+The package builds (from the source tree root) with
+
+ $ dpkg-buildpackage
+
+( you may need some combination of '-rfakeroot', '-uc', '-us', etc, depending
+  on your system configuration )
+
+Alternatively, the packagin can be skipped by just running with Autotools:
+
+ $ ./autogen.sh
+ $ ./configure
+ $ make
+
+
+Running the tests
+
+USAGE: blts-fbdev-tests [-l mylog.txt] [-e test1,test2...] [-en "my test"] [-s] [-?] [-nc] [-C variation_config.cnf] [-v]
+  -l: Used log file, default blts-fbdev-log.txt
+  -e: Execute single or multiple selected tests, for example -e 1,4,5.
+  -en: Execute test by name, for example -en "My test X"
+  -s: Show list of all tests
+  -C: Used parameter configuration file
+  -?: This message
+  -nc: Do not output log to terminal
+  -v: Verbose logging (default)
+  -vv: Very verbose logging, with trace information
+
+Test cases
+
+* Core-Framebuffer read frame buffer information with ioctl
+        Reads variant and fixed screen information from frame buffer device(s).
+
+* Core-Framebuffer set blanking levels
+        Tests each of the blanking levels on all configured framebuffer
+        devices.
+
+* Core-Framebuffer 1-pixel uncached read
+        Performance test of reading visible framebuffer pixel by pixel. Uses
+        rusage to estimate the CPU usage %. Prints information about the test
+        and framebuffer into the log and standard output. Done for all
+        configured framebuffer devices.
+
+* Core-Framebuffer 1-pixel uncached write
+        Performance test of writing into visible framebuffer pixel by pixel.
+        Uses rusage to estimate the CPU usage %. Prints information about the
+        test and framebuffer device into the log and standard output. Done
+        for all configured framebuffer devices.
+
+* Core-Framebuffer 1-pixel uncached modify
+        Performance test of both reading and vriting into visible framebuffer
+        pixel by pixel. Uses rusage to estimate the CPU usage %. Prints
+        information about the test and framebuffer into the log and and
+        stadard output. Done for all configured framebuffer devices.
+
+* Core-Framebuffer fullscreen buffer read
+        Performance test of reading a fullscreen framebuffer at once. Uses
+        rusage to estimate the CPU usage %. Prints information about the test
+        and framebuffer into the log and standard output. Done for all
+        configured devices.
+
+* Core-Framebuffer fullscreen buffer write
+        Performance test of writing into  a fullscreen framebuffer at once.
+        Uses rusage to estimate the CPU usage %. Prints information about the
+        test and framebuffer into the log and standard output. Done for all
+        configured devices.
+
+* Core-Framebuffer fullscreen buffer modify
+        Performance test of both reading and writing into a fullscreen
+        framebuffer at once. Uses rusage to estimate the CPU usage %. Prints
+        information about the test and framebuffer into the log and standard
+        output. Done for all configured devices.
+
+* Core-Backlight verify backlight levels
+        Verify backlight system's backlight level limits against configured
+        limits. Tests the limit values, by using the actual limit and going
+        one step over it.
+
+* Core-Backlight linear backlight level changes
+        Linearly goes through all values between configured minimum and maximum
+        values, by first going from min -> max and then from max -> min.
+        NOTE: This case can timeout if the min and max are very big. The case
+        sleeps for two seconds between each step!
+
+* Core-Backlight logarithmic backlight level changes
+        Goes through all values between configured minimum and maximum
+        values, by going from min -> max. The values are increased by following
+        pattern: (max light / log10 (max light)) * log10 (between min and max)
+        NOTE: This case can timeout if the min and max are very big. The case
+        sleeps for two seconds between each step!

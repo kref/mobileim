@@ -1,0 +1,55 @@
+blts-v4l2-tests (0.3.9) unstable; urgency=low
+
+  * Remove obsolete Min support code
+
+ -- Kimmo Myllyvirta <kimmo.myllyvirta@digia.com>  Thu, 16 Dec 2010 11:11:15 +0200
+
+blts-v4l2-tests (0.3.8) unstable; urgency=low
+
+  [ Jussi Saavalainen ]
+  * Rename duplicate set in tests.xml
+
+ -- Jussi Saavalainen <jussi.saavalainen@digia.com>  Wed, 01 Dec 2010 16:58:37 +0200
+
+blts-v4l2-tests (0.3.7) unstable; urgency=low
+
+  [ Mika Niinistö, Kimmo Myllyvirta ]
+  * Packaging script updated.
+  * Logging updated to new common library standard.
+  * Fix memory corruption when parsing variant arguments.
+
+ -- Kimmo Myllyvirta <kimmo.myllyvirta@digia.com>  Tue, 16 Nov 2010 18:01:50 +0200
+
+blts-v4l2-tests (0.3.6) unstable; urgency=low
+
+  [ Jussi Saavalainen ]
+  * Reorder includes to fix compile error with new libjpeg headers.
+
+ -- Jussi Saavalainen <jussi.saavalainen@digia.com>  Wed, 13 Oct 2010 12:51:44 +0300
+
+blts-v4l2-tests (0.3.5) unstable; urgency=low
+
+  [ Kimmo Myllyvirta ]
+  * Add RPM packaging
+  * Binary name changed to "blts-v4l2-tests"
+  * Separate platform configuration packaging
+
+ -- Kimmo Myllyvirta <kimmo.myllyvirta@digia.com>  Thu, 30 Sep 2010 15:42:20 +0300
+
+blts-v4l2-tests (0.3.4) unstable; urgency=low
+
+  [ Mikko Ojala, Aki Nyman, Jussi Saavalainen & Pasi Matilainen ]
+  * Initial upload for Meego (changelog summarized)
+  * Driver debug print test
+  * Input and output select and tests
+  * Support for device native JPEG compression
+  * FPS measurement test using poll() instead of select().
+  * Standard and Extended capture control tests.
+  * Streaming test with frame rate selection.
+  * Experimental device priority change test.
+  * Experimental capture quality change test.
+  * Cropping and enumeration test cases.
+  * Enhanced still imaging, snapshot, streaming test cases.
+  * Max resolution, FPS calculations, extended controls enumeration
+
+ -- Kari Laakso <kari.laakso@digia.com>  Wed, 08 Sep 2010 13:14:25 +0300

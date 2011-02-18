@@ -1,0 +1,413 @@
+# oFono test case configuration for parameters
+
+[globals]
+#considered as PIN1
+	default_pin "2468"
+#considered as PIN2 
+	default_pin2 "3579"
+#considered as pin affecting barrings 
+	default_barrings_pin "31337"
+[end_globals]
+
+# This is used if not otherwise specified on individual test cases
+
+[globals]
+	global_timeout "60000"
+[end_globals]
+
+######################
+# General parameters #
+######################
+
+[parameter]
+	name country_code
+	const "+358"
+[end_parameter]
+
+[parameter]
+	name remote_address
+	const "123456789"
+[end_parameter]
+
+[parameter]
+	name old_pin
+	const default_pin 
+[end_parameter]
+
+[parameter]
+	name old_pin2
+	const default_pin2 
+[end_parameter]
+
+[parameter]
+	name new_pin
+	const "2648"
+[end_parameter]
+
+####################
+# Voice call cases #
+####################
+
+[parameter]
+	name voicecall_timeout
+	const global_timeout
+[end_parameter]
+
+[test]
+	name "oFono - Create voicecall"
+	params country_code remote_address voicecall_timeout
+[end_test]
+
+[test]
+	name "oFono - Create voicecall with hidden caller ID"
+	params country_code remote_address voicecall_timeout
+[end_test]
+
+[test]
+	name "oFono - Answer to voicecall and deflect"
+	params country_code remote_address voicecall_timeout
+[end_test]
+
+[test]
+	name "oFono - Answer to voicecall and hangup"
+	params voicecall_timeout
+[end_test]
+
+[test]
+	name "oFono - Answer to voicecall and hangup all"
+	params voicecall_timeout
+[end_test]
+
+[test]
+	name "oFono - Answer to voicecall and wait another call"
+	params voicecall_timeout
+[end_test]
+
+[test]
+	name "oFono - Answer to voicecall and remote hangup"
+	params voicecall_timeout
+[end_test]
+
+[test]
+	name "oFono - Cancel voicecall"
+	params voicecall_timeout
+[end_test]
+
+[test]
+	name "oFono - Transfer"
+	params voicecall_timeout
+[end_test]
+
+[test]
+	name "oFono - Swap"
+	params voicecall_timeout
+[end_test]
+
+[test]
+	name "oFono - Release and answer"
+	params voicecall_timeout
+[end_test]
+
+[test]
+	name "oFono - Hold and answer"
+	params voicecall_timeout
+[end_test]
+
+[test]
+	name "oFono - Multiparty call test"
+	params voicecall_timeout
+[end_test]
+
+[test]
+	name "oFono - Private call test"
+	params voicecall_timeout
+[end_test]
+
+##############
+# DTMF cases #
+##############
+
+[parameter]
+	name dtmf_timeout
+	const global_timeout
+[end_parameter]
+
+[parameter]
+	name dtmf_length
+	const 1 5
+[end_parameter]
+
+[parameter]
+	name dtmf_chars
+	const "1" "2" "3" "4" "5" "6" "7" "8" "9" "0" "*" "#"
+[end_parameter]
+
+[parameter]
+	name dtmf_negative_chars
+	const "A" "B" "C" "D" "E" "F"
+[end_parameter]
+
+[parameter]
+	name dtmf_tones
+	generate dtmf_generator dtmf_chars dtmf_length
+[end_parameter]
+
+[test]
+	name "oFono - Call and send DTMF"
+	params remote_address dtmf_tones dtmf_timeout
+[end_test]
+
+#############
+# SMS cases #
+#############
+
+[parameter]
+	name sms_timeout
+	const global_timeout
+[end_parameter]
+
+[parameter]
+	name message_length
+	const 0 1 80 159 160 161 1600
+[end_parameter]
+
+[parameter]
+	name message_content_seed
+	const "Test"
+[end_parameter]
+
+[parameter]
+	name sms_message
+	generate message_generator message_content_seed message_length
+[end_parameter]
+
+[parameter]
+	name SMSC
+	const "+000123456789"
+[end_parameter]
+
+[parameter]
+	name valid_tst_smsc
+	const "12345678901234567890"
+[end_parameter]
+
+[parameter]
+	name bearer
+	const "cs-only" "ps-only"
+[end_parameter]
+
+[test]
+	name "oFono - Send SMS"
+	params sms_message country_code remote_address SMSC bearer sms_timeout
+[end_test]
+
+[test]
+	name "oFono - Receive SMS"
+	params SMSC bearer sms_timeout
+[end_test]
+
+[test]
+	name "oFono - SMSC number test"
+	params valid_tst_smsc sms_timeout
+[end_test]
+
+#############
+# SIM cases #
+#############
+
+[parameter]
+	name pin_type
+	const "pin"
+[end_parameter]
+
+[parameter]
+	name puk_code
+	const "13243546"
+[end_parameter]
+
+[test]
+	name "oFono - Change PIN"
+	params old_pin new_pin pin_type
+[end_test]
+
+[test]
+	name "oFono - Enter PIN"
+	params old_pin new_pin pin_type
+[end_test]
+
+[test]
+	name "oFono - Reset PIN"
+	params puk_code old_pin pin_type
+[end_test]
+
+[test]
+	name "oFono - Lock PIN"
+	params old_pin new_pin pin_type
+[end_test]
+
+[test]
+	name "oFono - Unlock PIN"
+	params old_pin new_pin pin_type
+[end_test]
+
+#########################
+# Call forwarding cases #
+#########################
+
+[parameter]
+	name call_forwarding_timeout
+	const global_timeout
+[end_parameter]
+
+[parameter]
+	name call_forwarding_keepalive
+	const "1" "15" "30"
+[end_parameter]
+
+[parameter]
+	name forward_address
+	const "9876543210"
+[end_parameter]
+
+[parameter]
+	name disable_forwarding
+	const "" "all" "conditional"
+[end_parameter]
+
+[test]
+	name "oFono - Disable forwardings"
+	params disable_forwarding call_forwarding_timeout
+[end_test]
+
+[test]
+	name "oFono - Unconditional forwarding"
+	params forward_address call_forwarding_timeout
+[end_test]
+
+[test]
+	name "oFono - Forward if busy"
+	params remote_address forward_address call_forwarding_keepalive call_forwarding_timeout
+[end_test]
+
+[test]
+	name "oFono - Forward if no reply"
+	params forward_address call_forwarding_timeout
+[end_test]
+
+[test]
+	name "oFono - Forward if not reachable"
+	params forward_address call_forwarding_timeout
+[end_test]
+
+
+######################
+# Call barring cases #
+######################
+
+[parameter]
+	name call_barring_timeout
+	const global_timeout
+[end_parameter]
+
+[test]
+	name "oFono - Change password for barrings"
+	params old_pin2 new_pin call_barring_timeout
+[end_test]
+
+[test]
+	name "oFono - Disable barrings"
+	params old_pin2 new_pin call_barring_timeout
+[end_test]
+
+[test]
+	name "oFono - Call barrings test"
+	params old_pin2 new_pin call_barring_timeout
+[end_test]
+
+[test]
+	name "oFono - Check barring properties"
+	params old_pin2 new_pin call_barring_timeout
+[end_test]
+
+[test]
+	name "oFono - Disable incoming barrings"
+	params old_pin2 new_pin call_barring_timeout
+[end_test]
+
+[test]
+	name "oFono - Disable outgoing barrings"
+	params old_pin2 new_pin call_barring_timeout
+[end_test]
+	
+####################
+# Call meter cases #
+####################
+
+[parameter]
+	name call_meter_timeout
+	const global_timeout
+[end_parameter]
+
+[parameter]
+	name call_meter_max
+	const "0" "10" "5000000"
+[end_parameter]
+
+[parameter]
+	name price_per_unit
+	const "0.00001" "1" "5000000"
+[end_parameter]
+
+[parameter]
+	name currency
+	const "FIM" "EUR" "XX"
+[end_parameter]
+
+[test]
+	name "oFono - Call meters read"
+	params call_meter_timeout
+[end_test]
+
+[test]
+	name "oFono - Call meters set"
+	params call_meter_max price_per_unit currency call_meter_timeout
+[end_test]
+
+[test]
+	name "oFono - Call meters reset"
+	params remote_address old_pin call_meter_timeout
+[end_test]
+
+[test]
+	name "oFono - Call meters near max warning"
+	params remote_address old_pin call_meter_timeout
+[end_test]
+
+################
+# Volume cases #
+################
+
+[parameter]
+	name call_volume_timeout
+	const global_timeout
+[end_parameter]
+
+[parameter]
+	name volume
+	const "null" "0" "50" "100"
+[end_parameter]
+
+[test]
+	name "oFono - Set microphone volume"
+	params volume call_volume_timeout
+[end_test]
+
+[test]
+	name "oFono - Set speaker volume"
+	params volume call_volume_timeout
+[end_test]
+
+[test]
+	name "oFono - Set muted"
+	params call_volume_timeout
+[end_test]
