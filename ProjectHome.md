@@ -1,0 +1,1 @@
+Project that can communicate between lots of mobile device suppot QT.
